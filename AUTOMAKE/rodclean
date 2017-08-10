@@ -1,0 +1,10 @@
+rm -rf aclocal.m4 autom4te.cache config.guess config.log config.status config.sub
+rm -rf configure depcomp install-sh m4 ltmain.sh missing
+rm -rf func1.lo func1.o func2.lo func2.o libExample.la libtool main.o Makefile Makefile.in
+rm -rf ABOUT-NLS intl po *~
+rm -rf autoscan.log config.h config.h.in .deps .libs stamp-h1 testprog
+cd admin
+rm -rf *
+cd ..
+
+ls -al

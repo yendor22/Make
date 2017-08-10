@@ -1,0 +1,43 @@
+Directions for handling a FLEX SCANNER
+
+mkdir FLEX_SCANNER
+cd FLEX_SCANNER/
+
+Create the necessary files
+        vi count_words.c
+        vi lexer.l
+	vi Makefile
+        vi sample.txt
+
+Generate the flex file and executable
+	Make
+
+Run the scanner
+        ./a.out < sample.txt
+
+clean the directory
+	rm count_words count_words.o lexer.o lexer.c
+
+
+
+
+*** An Alternative is to run the process by hand ***
+
+Generate the flex file
+        flex lexer.l
+        ls -al
+                -rw-rw-r--. 1 osborner osborner   237 Aug  8 09:13 count_words.c
+		-rw-rw-r--. 1 osborner osborner   184 Aug  8 09:25 lexer.l
+		-rw-rw-r--. 1 osborner osborner 44327 Aug  8 09:49 lex.yy.c
+		-rw-rw-r--. 1 osborner osborner   219 Aug  8 08:13 Makefile
+		-rw-rw-r--. 1 osborner osborner    97 Aug  8 09:06 sample.txt
+
+Compile the executable
+        gcc count_words.c lex.yy.c
+        ls -al
+                -rwxrwxr-x. 1 osborner osborner 24080 Aug  8 09:50 a.out
+
+
+Run the scanner
+        ./a.out < sample.txt
+

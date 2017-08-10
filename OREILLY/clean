@@ -1,0 +1,2 @@
+rm count_words count_words.o lexer.o lexer.c
+rm lex.yy.c a.out

@@ -1,0 +1,36 @@
+
+--------------------------------------------
+
+libtoolize
+aclocal
+autoconf
+autoheader
+automake -a
+
+./configure
+make
+
+--------------------------------------------
+
+sudo make install
+sudo make uninstall
+
+--------------------------------------------
+autoreconf -vfi
+autoupdate ??
+
+--------------------------------------------
+
+NOTE:  See O'Reilly GNU Make pg 15 for info
+
+make install
+make clean
+make uninstall
+make distclean
+make all
+make TAGS
+make info
+make check
+
+--------------------------------------------
+

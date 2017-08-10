@@ -1,0 +1,2 @@
+rm -rf func1.o func2.o main.o libmylib.a prog
+

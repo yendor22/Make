@@ -1,0 +1,9 @@
+
+Compile By Hand:
+
+gcc -c func1.c -o func1.o
+gcc -c func2.c -o func2.o
+ar -rcs libmylib.a func1.o func2.o
+gcc main.c -L. -lmylib -o prog
+
+
