@@ -16,7 +16,8 @@ Run the scanner
         ./a.out < sample.txt
 
 clean the directory
-	rm count_words count_words.o lexer.o lexer.c
+	make clean
+	//rm count_words count_words.o lexer.o lexer.c
 
 
 
