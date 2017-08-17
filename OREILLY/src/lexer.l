@@ -1,3 +1,7 @@
+%{
+#include "lexer.h"
+%}
+
 %option noyywrap
 
 	int fee_count = 0;
