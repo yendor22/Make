@@ -1,29 +1,26 @@
-#VPATH = src
-vpath %.c src
-vpath %.l src
-vpath %.h include
-
+VPATH = src include
 CPPFLAGS = -I include
 
-count_words: count_words.o counter.o lexer.o -lfl
-	gcc $(CPPFLAGS) $^ -o $@
+#TARGETS
+count_words: counter.o lexer.o -lfl
+count_words.o: counter.h
+counter.o: counter.h lexer.h
+lexer.o: lexer.h
 
-count_words.o: count_words.c counter.h
-	gcc $(CPPFLAGS) -c $<
+#PATTERN RULES
+%.o: %.c
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
 
-counter.o: counter.c counter.h lexer.h
-	gcc $(CPPFLAGS) -c $<
+%.c: %.l
+	@$(RM) $A
+	$(LEX.l) $< > $@
 
-lexer.o: lexer.c lexer.h
-	gcc $(CPPFLAGS) -c $<
-
-lexer.c: lexer.l
-	flex -t $< > $@
+%: %.o
+	$(LINK.o) $^ $(LOADLIBS) $(LDLIBS) -o $@
 
 .PHONY: clean
 clean:
-	rm -f *.o 
+	rm -f *.o
 	rm -f lexer.c
 	rm -f count_words
-
 
